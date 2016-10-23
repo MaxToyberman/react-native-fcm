@@ -14,6 +14,22 @@
 - Run `react-native link react-native-fcm` (RN 0.29.1+, otherwise `rnpm link react-native-fcm`)
 
 ## Android Configuration
+- Add google-services.json to android/app/
+- Add 'include ':react-native-fcm' to android/settings.gradle
+- Add project(':react-native-fcm').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fcm/android')
+- Add to MainApplication.java import com.evollu.react.fcm.FIRMessagingPackage;
+- Add to MainApplication.java import com.evollu.react.fcm.FIRMessagingPackage;
+- update MainApplication.java to this :
+
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+               new FIRMessagingPackage() // <- add this  line to the packages
+      );
+    }
+//NOW YOU CAN REINSTALL THE APP AND YOU WILL SEE THE REFRESHED TOKEN    
+to android/settings.gradle
 
 - Edit `android/build.gradle`:
 ```diff
