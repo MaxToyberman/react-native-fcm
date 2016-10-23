@@ -21,13 +21,15 @@
 - Add to MainApplication.java import com.evollu.react.fcm.FIRMessagingPackage;
 - update MainApplication.java to this :
 
-    @Override
+```java
+   @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
                new FIRMessagingPackage() // <- add this  line to the packages
       );
     }
+```     
 //NOW YOU CAN REINSTALL THE APP AND YOU WILL SEE THE REFRESHED TOKEN    
 to android/settings.gradle
 
